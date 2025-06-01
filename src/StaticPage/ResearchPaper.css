@@ -1,0 +1,217 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+body, html, #root {
+  margin: 0; padding: 0; height: 100%;
+  font-family: 'Lexend', Arial, sans-serif;
+}
+
+
+body, html, #root {
+  margin: 0; padding: 0; height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Page container holds sidebar and main content horizontally */
+.page-container {
+  display: flex;
+  height: 100vh; /* full viewport height */
+  width: 100vw;  /* full viewport width */
+  overflow: hidden;
+}
+
+/* Sidebar fixed width */
+.sidebar {
+  width: 15%; /* or any desired fixed width */
+  background-color: #f0f0f0; /* example background */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* Main content fills the remaining space */
+.main-content {
+  flex-grow: 1;        /* take all remaining width */
+  overflow-y: auto;    /* allow vertical scroll if needed */
+  padding: 40px 30px 80px 30px;
+  box-sizing: border-box;
+  background: white;
+  color: #000;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 40px 30px 80px 30px;
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  background: white;
+  color: #000;
+}
+.container {
+  width: 100%;       /* make container fill full width of main-content */
+  max-width: none;   /* remove max-width limitation */
+  margin: 0;         /* remove centering */
+}
+
+/* Content area */
+.content {
+  flex: 1;
+  max-width: 650px;
+  margin: 0 auto 30px auto;
+  border-left: 4px solid #168b8b; /* teal border */
+  padding-left: 20px;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.content-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-top: 0;
+}
+
+.content-text ul {
+  margin-top: 8px;
+  padding-left: 20px;
+}
+
+.link {
+  font-size: 0.85rem;
+  color: #168b8b;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Ask a question button */
+.ask-btn {
+  margin-top: 20px;
+  background-color: #168b8b;
+  border: none;
+  padding: 9px 20px;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.ask-btn:hover {
+  background-color: #0f5a5a;
+}
+
+/* Card row navigation */
+.card-row {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  background-color: #d6e2e3;
+  padding: 30px 25px;
+  width: 180px;
+  height: 90px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease,
+    border-bottom 0.15s ease;
+  border-bottom: 4px solid transparent;
+  text-align: center;
+}
+
+.card strong {
+  color: inherit;
+}
+
+.card.middle-card {
+  color: #168b8b;
+  font-weight: 700;
+}
+
+.card.active {
+  background-color: #e0eff0;
+  color: #168b8b;
+  border-bottom: 4px solid #168b8b;
+  box-shadow: none;
+  cursor: default;
+  user-select: text;
+}
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Modal container */
+.modal-content {
+  background: white;
+  width: 600px;
+  max-height: 70vh;
+  border-radius: 8px;
+  padding: 20px 30px 30px 30px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable content */
+.modal-scroll {
+  overflow-y: auto;
+  max-height: 55vh;
+  padding-right: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #168b8b;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0;
+}
+
+.modal-close:hover {
+  color: #0f5a5a;
+}
